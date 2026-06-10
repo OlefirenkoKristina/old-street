@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Звіт — Лабораторна робота №1. Основи HTML</title>
+  <style>
+    /* ── Стилі для друку звіту ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14pt;
+      line-height: 1.8;
+      color: #000;
+      background: #fff;
+      padding: 2cm 2.5cm;
+      max-width: 21cm;
+      margin: 0 auto;
+    }
+
+    /* Титульна сторінка */
+    .title-page {
+      text-align: center;
+      page-break-after: always;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1cm 0;
+    }
+    .university-name { font-size: 13pt; font-weight: bold; text-transform: uppercase; line-height: 1.4; }
+    .department { font-size: 11pt; margin-top: 0.5em; }
+
+    .title-block { margin: 2cm 0 1cm; }
+    .title-block .subject { font-size: 12pt; margin-bottom: 0.5em; }
+    .title-block .lab-num { font-size: 18pt; font-weight: bold; margin-bottom: 0.3em; }
+    .title-block .lab-theme { font-size: 15pt; font-weight: bold; }
+    .title-block .variant { font-size: 13pt; font-style: italic; margin-top: 0.8em; }
+
+    .student-block { text-align: right; font-size: 12pt; line-height: 2; }
+    .student-block .label { display: inline-block; width: 8em; text-align: left; }
+    .student-block .value { display: inline-block; width: 14em; border-bottom: 1px solid #000; }
+
+    .city-year { text-align: center; font-size: 13pt; margin-top: 1cm; }
+
+    /* Основний контент */
+    h1 { font-size: 16pt; text-align: center; margin: 1.2em 0 0.8em; text-transform: uppercase; }
+    h2 { font-size: 14pt; font-weight: bold; margin: 1.5em 0 0.5em; }
+    h3 { font-size: 13pt; font-weight: bold; margin: 1em 0 0.4em; }
+    h4 { font-size: 12pt; font-weight: bold; margin: 0.8em 0 0.3em; }
+
+    p { margin-bottom: 0.7em; text-align: justify; }
+    ul, ol { margin: 0.5em 0 0.8em 2em; }
+    li { margin-bottom: 0.3em; }
+
+    /* Код */
+    pre, code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 10pt;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+    }
+    pre {
+      padding: 0.6em 1em;
+      overflow-x: auto;
+      margin: 0.6em 0 0.8em;
+      line-height: 1.5;
+    }
+    code { padding: 0.1em 0.3em; }
+
+    /* Таблиці */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8em 0;
+      font-size: 12pt;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 0.35em 0.7em;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #e8e8e8; font-weight: bold; text-align: center; }
+
+    /* Розрив сторінки */
+    .page-break { page-break-before: always; }
+
+    /* Підпис під кодом */
+    figcaption {
+      text-align: center;
+      font-size: 11pt;
+      color: #555;
+      margin-top: 0.3em;
+      font-style: italic;
+    }
+
+    @media print {
+      body { padding: 0; }
+      .title-page { min-height: 27cm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       ТИТУЛЬНА СТОРІНКА
+  ══════════════════════════════════ -->
+  <div class="title-page">
+    <div>
+      <p class="university-name">
+        Міністерство освіти і науки України<br>
+        Кам'янець-Подільський національний університет<br>
+        імені Івана Огієнка
+      </p>
+      <p class="department">
+        Факультет інформаційних технологій<br>
+        Кафедра комп'ютерних наук та інформаційних технологій
+      </p>
+    </div>
+
+    <div class="title-block">
+      <p class="subject">Дисципліна: Веб-технології та веб-дизайн</p>
+      <p class="lab-num">Лабораторна робота №&nbsp;1</p>
+      <p class="lab-theme">«Основи HTML»</p>
+      <p class="variant">Варіант 6 — Сайт ресторану «Old Street»</p>
+    </div>
+
+    <div class="student-block">
+      <p>
+        <span class="label">Виконала:</span>
+        <span class="value">&nbsp;</span>
+      </p>
+      <p>
+        <span class="label">Група:</span>
+        <span class="value">&nbsp;</span>
+      </p>
+      <p>
+        <span class="label">Перевірив:</span>
+        <span class="value">&nbsp;</span>
+      </p>
+      <p>
+        <span class="label">Дата:</span>
+        <span class="value">&nbsp;</span>
+      </p>
+      <p>
+        <span class="label">Оцінка:</span>
+        <span class="value">&nbsp;</span>
+      </p>
+    </div>
+
+    <p class="city-year">Кам'янець-Подільський — 2025</p>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ОСНОВНИЙ ТЕКСТ ЗВІТУ
+  ══════════════════════════════════ -->
+
+  <h1>Звіт до лабораторної роботи №&nbsp;1</h1>
+
+  <!-- 1. Тема та мета -->
+  <h2>1. Тема та мета роботи</h2>
+  <p>
+    <strong>Тема:</strong> Основи HTML5. Семантична верстка багатосторінкового вебсайту.
+  </p>
+  <p>
+    <strong>Мета:</strong> навчитись створювати семантично коректну структуру багатосторінкового вебсайту
+    з використанням HTML5; опанувати принципи логічної організації контенту; забезпечити коректну
+    навігацію між сторінками та підготувати основу для подальшої стилізації й адаптивної верстки.
+  </p>
+
+  <!-- 2. Теоретичні відомості -->
+  <h2>2. Теоретичні відомості</h2>
+
+  <h3>2.1 Семантичні теги HTML5</h3>
+  <p>
+    Семантична верстка — підхід, за якого кожен HTML-елемент несе смислове навантаження,
+    що дозволяє браузерам, пошуковим системам та допоміжним технологіям (скрін-рідери)
+    правильно інтерпретувати структуру сторінки. HTML5 запровадив низку семантичних тегів:
+  </p>
+  <ul>
+    <li><code>&lt;header&gt;</code> — шапка сторінки або секції; містить логотип та навігацію</li>
+    <li><code>&lt;nav&gt;</code> — блок навігаційних посилань</li>
+    <li><code>&lt;main&gt;</code> — основний унікальний контент сторінки (лише один на сторінці)</li>
+    <li><code>&lt;section&gt;</code> — тематична секція з власним заголовком</li>
+    <li><code>&lt;article&gt;</code> — самодостатній незалежний блок контенту (новина, страва, картка)</li>
+    <li><code>&lt;aside&gt;</code> — бічний контент, пов'язаний із основним, але другорядний</li>
+    <li><code>&lt;footer&gt;</code> — підвал сторінки або секції</li>
+    <li><code>&lt;address&gt;</code> — контактна інформація автора або закладу</li>
+    <li><code>&lt;time&gt;</code> — дата або час у машинозчитуваному форматі</li>
+    <li><code>&lt;figure&gt;</code> / <code>&lt;figcaption&gt;</code> — ілюстративний матеріал із підписом</li>
+  </ul>
+
+  <h3>2.2 Доступність (Accessibility) та ARIA</h3>
+  <p>
+    ARIA (<em>Accessible Rich Internet Applications</em>) — набір атрибутів, що розширюють
+    семантику HTML для допоміжних технологій. Ключові атрибути:
+  </p>
+  <ul>
+    <li><code>aria-label</code> — текстове позначення елемента для скрін-рідера</li>
+    <li><code>aria-labelledby</code> — посилання на видимий елемент, що слугує міткою</li>
+    <li><code>aria-describedby</code> — посилання на елемент із додатковим описом</li>
+    <li><code>aria-required="true"</code> — позначає обов'язкові поля форми</li>
+    <li><code>aria-current="page"</code> — позначає поточну сторінку у навігації</li>
+    <li><code>role</code> — явно задає роль елемента (наприклад, <code>role="img"</code>, <code>role="group"</code>)</li>
+  </ul>
+
+  <h3>2.3 Структура форми</h3>
+  <p>
+    Доступна форма HTML5 будується на таких принципах:
+    <code>&lt;fieldset&gt;</code> групує пов'язані поля, <code>&lt;legend&gt;</code> описує групу,
+    кожне поле <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>
+    пов'язане з <code>&lt;label&gt;</code> через атрибут <code>for</code>/<code>id</code>.
+    Атрибути <code>required</code>, <code>type</code>, <code>min</code>, <code>max</code>,
+    <code>pattern</code> забезпечують нативну валідацію браузера.
+  </p>
+
+  <!-- 3. Хід роботи -->
+  <div class="page-break"></div>
+  <h2>3. Хід роботи</h2>
+
+  <h3>3.1 Структура проєкту</h3>
+  <p>
+    Для виконання роботи було створено веб-сайт ресторану «Old Street»
+    (м. Кам'янець-Подільський). Сайт складається з трьох HTML-сторінок
+    та одного файлу стилів:
+  </p>
+  <pre>
+Old_Street/
+├── index.html       ← Головна сторінка
+├── menu.html        ← Сторінка «Меню»
+├── booking.html     ← Сторінка «Бронювання»
+├── css/
+│   └── style.css    ← Базова стилізація
+└── report.html      ← Цей звіт</pre>
+
+  <h3>3.2 Головна сторінка (index.html)</h3>
+
+  <h4>Мета сторінки</h4>
+  <p>
+    Головна сторінка презентує концепцію ресторану, ключові переваги, графік роботи
+    та містить навігацію до інших розділів.
+  </p>
+
+  <h4>Семантична структура</h4>
+  <p>
+    Сторінка побудована за такою ієрархією семантичних тегів:
+  </p>
+  <pre>
+&lt;header&gt;  — логотип + &lt;nav&gt; з навігаційними посиланнями
+&lt;main&gt;
+  &lt;section aria-labelledby="hero-heading"&gt;     — секція-привітання
+  &lt;section aria-labelledby="about-heading"&gt;    — концепція ресторану
+    &lt;section aria-labelledby="features-heading"&gt; — вкладена підсекція «Переваги»
+      &lt;ul&gt; → &lt;li&gt; → &lt;article&gt;                   — картки переваг
+  &lt;section aria-labelledby="hours-heading"&gt;    — графік роботи
+    &lt;table&gt;                                       — таблиця годин
+  &lt;section aria-labelledby="location-heading"&gt; — розташування
+&lt;footer&gt;
+  &lt;address&gt;  — контактна інформація ресторану</pre>
+
+  <h4>Використання тегу &lt;address&gt;</h4>
+  <p>
+    Згідно зі специфікацією HTML5, тег <code>&lt;address&gt;</code> у <code>&lt;footer&gt;</code>
+    позначає контактну інформацію закладу: фізичну адресу, телефон, e-mail та посилання
+    на онлайн-меню. Застосований атрибут <code>aria-label</code> для опису скрін-рідером:
+  </p>
+  <pre>
+&lt;address class="footer-contacts"
+         aria-label="Контактна інформація ресторану"&gt;
+  &lt;p&gt;&lt;a href="https://maps.app.goo.gl/..."&gt;
+    Старе місто, Кам'янець-Подільський, 32300
+  &lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="tel:+380674001234"&gt;+38 (067) 400-12-34&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="mailto:info@old-street.com.ua"&gt;...&lt;/a&gt;&lt;/p&gt;
+&lt;/address&gt;</pre>
+
+  <!-- 3.3 Меню -->
+  <div class="page-break"></div>
+  <h3>3.3 Сторінка «Меню» (menu.html)</h3>
+
+  <h4>Структура категорій</h4>
+  <p>
+    Меню розбите на 6 категорій-секцій. Кожна категорія — окремий
+    <code>&lt;section&gt;</code> з унікальним <code>id</code> для якірної навігації.
+    Кожна страва — <code>&lt;article&gt;</code>, що є самодостатнім блоком контенту.
+  </p>
+
+  <table>
+    <caption>Категорії меню ресторану «Old Street»</caption>
+    <thead>
+      <tr>
+        <th>Категорія</th>
+        <th>id секції</th>
+        <th>К-сть страв</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Закуски</td>     <td><code>#zakusky</code></td>         <td>3</td></tr>
+      <tr><td>Салати</td>      <td><code>#salaty</code></td>          <td>3</td></tr>
+      <tr><td>Перші страви</td><td><code>#pershi-stravy</code></td>   <td>3</td></tr>
+      <tr><td>Основні страви</td><td><code>#osnovni-stravy</code></td><td>5</td></tr>
+      <tr><td>Десерти</td>     <td><code>#desertu</code></td>         <td>3</td></tr>
+      <tr><td>Напої</td>       <td><code>#napoi</code></td>           <td>4</td></tr>
+    </tbody>
+  </table>
+
+  <h4>ARIA-мітки для алергенів</h4>
+  <p>
+    Відповідно до вимог варіанту, кожна страва, що містить алергени, позначена
+    значками з атрибутами <code>role="img"</code> та <code>aria-label</code>
+    із детальним описом алергену:
+  </p>
+  <pre>
+&lt;div class="dish-tags" role="group"
+     aria-label="Алергени страви «Борщ Старомістський»"&gt;
+  &lt;span class="allergen-badge badge-g"
+        role="img"
+        aria-label="Алерген: глютен — пампушки з пшеничного борошна"&gt;Г&lt;/span&gt;
+  &lt;span class="allergen-badge badge-l"
+        role="img"
+        aria-label="Алерген: лактоза — подається зі сметаною"&gt;Л&lt;/span&gt;
+&lt;/div&gt;</pre>
+
+  <h4>ARIA-мітки для гостроти</h4>
+  <p>
+    Рівень гостроти позначається елементом <code>&lt;meter&gt;</code> — стандартним
+    HTML5-елементом для відображення числового значення у межах діапазону.
+    Атрибут <code>aria-label</code> забезпечує доступне текстове пояснення:
+  </p>
+  <pre>
+&lt;meter class="spicy-meter"
+       min="0" max="3" value="2"
+       aria-label="Гострота: 2 з 3 — помірна гострота"
+       aria-describedby="spicy-label-o5"&gt;
+  Помірна гострота (2 з 3)
+&lt;/meter&gt;</pre>
+
+  <h4>Легенда позначень</h4>
+  <p>
+    На початку сторінки розміщений блок <code>&lt;aside&gt;</code> із легендою,
+    що пояснює значення кожної абревіатури алергену та шкали гостроти.
+    Застосовано семантичний тег <code>&lt;dl&gt;</code> (список визначень):
+  </p>
+
+  <table>
+    <caption>Позначення алергенів у меню</caption>
+    <thead>
+      <tr><th>Значок</th><th>Алерген</th><th>Деталі</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Г</td><td>Глютен</td><td>пшениця, жито, ячмінь, овес</td></tr>
+      <tr><td>Л</td><td>Лактоза</td><td>молоко, вершки, масло, сир</td></tr>
+      <tr><td>Я</td><td>Яйця</td><td>яйця куряче та продукти з яєць</td></tr>
+      <tr><td>Р</td><td>Риба</td><td>риба та морепродукти</td></tr>
+      <tr><td>🌶</td><td>Гострота</td><td>1 — легка, 2 — помірна, 3 — висока</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 3.4 Бронювання -->
+  <div class="page-break"></div>
+  <h3>3.4 Сторінка «Бронювання» (booking.html)</h3>
+
+  <h4>Структура форми</h4>
+  <p>
+    Форма бронювання організована в 7 тематичних групах <code>&lt;fieldset&gt;</code>
+    з відповідними <code>&lt;legend&gt;</code>. Це забезпечує логічне групування полів
+    та зрозуміле озвучування скрін-рідерами.
+  </p>
+
+  <table>
+    <caption>Структура форми бронювання</caption>
+    <thead>
+      <tr><th>Fieldset</th><th>Зміст</th><th>Ключові елементи</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Контактні дані</td>
+        <td>Ім'я, телефон, e-mail</td>
+        <td><code>type="text"</code>, <code>type="tel"</code>, <code>type="email"</code></td>
+      </tr>
+      <tr>
+        <td>2. Деталі резервації</td>
+        <td>Дата, час, кількість гостей</td>
+        <td><code>type="date"</code>, <code>type="time"</code>, <code>&lt;select&gt;</code></td>
+      </tr>
+      <tr>
+        <td>3. Тип події</td>
+        <td>Привід зустрічі</td>
+        <td><code>type="radio"</code>, <code>role="radiogroup"</code></td>
+      </tr>
+      <tr>
+        <td>4. Розташування</td>
+        <td>Зона у ресторані</td>
+        <td><code>&lt;select&gt;</code></td>
+      </tr>
+      <tr>
+        <td>5. Харчові обмеження</td>
+        <td>Дієтичні потреби</td>
+        <td><code>type="checkbox"</code>, <code>role="group"</code></td>
+      </tr>
+      <tr>
+        <td>6. Додаткові побажання</td>
+        <td>Вільний коментар</td>
+        <td><code>&lt;textarea&gt;</code></td>
+      </tr>
+      <tr>
+        <td>7. Підтвердження</td>
+        <td>Згода з умовами</td>
+        <td><code>type="checkbox"</code>, <code>required</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Елементи вибору дати та часу</h4>
+  <p>
+    Для вибору дати використовується <code>&lt;input type="date"&gt;</code>,
+    для вибору часу — <code>&lt;input type="time"&gt;</code>. Атрибути <code>min</code>
+    та <code>max</code> обмежують допустимий діапазон. Підказки прив'язані через
+    <code>aria-describedby</code>:
+  </p>
+  <pre>
+&lt;input type="date" id="date" name="date"
+       required aria-required="true"
+       min="2025-01-01"
+       aria-describedby="date-hint"&gt;
+&lt;p id="date-hint" class="form-hint"&gt;
+  Ресторан відкритий щоденно з &lt;time&gt;11:00&lt;/time&gt; до &lt;time&gt;23:00&lt;/time&gt;
+&lt;/p&gt;
+
+&lt;input type="time" id="time" name="time"
+       required aria-required="true"
+       min="11:00" max="21:30" step="1800"
+       aria-describedby="time-hint"&gt;</pre>
+
+  <h4>Доступність форми</h4>
+  <p>
+    Кожне поле пов'язане з міткою через <code>for</code>/<code>id</code>.
+    Обов'язкові поля мають атрибути <code>required</code> та <code>aria-required="true"</code>
+    і позначені символом <code>&lt;abbr title="обов'язкове поле"&gt;*&lt;/abbr&gt;</code>.
+    Підказки (<code>form-hint</code>) прив'язані до полів через <code>aria-describedby</code>.
+  </p>
+
+  <!-- 4. Навігація -->
+  <h2>4. Організація навігації між сторінками</h2>
+  <p>
+    Кожна сторінка містить ідентичний блок <code>&lt;header&gt;</code> з елементом
+    <code>&lt;nav aria-label="Основна навігація сайту"&gt;</code>.
+    Посилання реалізовані відносними шляхами (<code>index.html</code>, <code>menu.html</code>,
+    <code>booking.html</code>). Поточна сторінка позначається атрибутом
+    <code>aria-current="page"</code> — це стандартна ARIA-практика:
+  </p>
+  <pre>
+&lt;nav class="main-nav" aria-label="Основна навігація сайту"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Головна&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="menu.html" aria-current="page"&gt;Меню&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="booking.html"&gt;Бронювання&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+  <p>
+    Сторінка «Меню» також містить внутрішню якірну навігацію по категоріях:
+    посилання виду <code>&lt;a href="#zakusky"&gt;</code> відповідають
+    <code>&lt;section id="zakusky"&gt;</code>.
+  </p>
+
+  <!-- 5. Зведена таблиця тегів -->
+  <div class="page-break"></div>
+  <h2>5. Зведена таблиця використаних семантичних тегів</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тег / Атрибут</th>
+        <th>Де використаний</th>
+        <th>Призначення</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;header&gt;</code></td>
+        <td>Всі 3 сторінки</td>
+        <td>Шапка сайту з логотипом та навігацією</td>
+      </tr>
+      <tr>
+        <td><code>&lt;nav aria-label&gt;</code></td>
+        <td>Всі 3 сторінки, footer, menu</td>
+        <td>Блоки навігації з доступними мітками</td>
+      </tr>
+      <tr>
+        <td><code>&lt;main&gt;</code></td>
+        <td>Всі 3 сторінки</td>
+        <td>Основний унікальний контент сторінки</td>
+      </tr>
+      <tr>
+        <td><code>&lt;section aria-labelledby&gt;</code></td>
+        <td>index.html, menu.html</td>
+        <td>Тематичні секції зі зв'язаними заголовками</td>
+      </tr>
+      <tr>
+        <td><code>&lt;article&gt;</code></td>
+        <td>menu.html (кожна страва), index.html</td>
+        <td>Самодостатній блок контенту — страва або картка переваги</td>
+      </tr>
+      <tr>
+        <td><code>&lt;aside&gt;</code></td>
+        <td>menu.html (легенда), booking.html</td>
+        <td>Другорядний, але пов'язаний контент</td>
+      </tr>
+      <tr>
+        <td><code>&lt;footer&gt;</code></td>
+        <td>Всі 3 сторінки</td>
+        <td>Підвал сайту з контактами та навігацією</td>
+      </tr>
+      <tr>
+        <td><code>&lt;address&gt;</code></td>
+        <td>footer на всіх сторінках</td>
+        <td>Контактна інформація ресторану</td>
+      </tr>
+      <tr>
+        <td><code>&lt;time datetime&gt;</code></td>
+        <td>index.html, booking.html, footer</td>
+        <td>Машинозчитувані дати та час</td>
+      </tr>
+      <tr>
+        <td><code>&lt;table&gt; + &lt;caption&gt;</code></td>
+        <td>index.html (графік роботи)</td>
+        <td>Таблиця з доступним підписом</td>
+      </tr>
+      <tr>
+        <td><code>&lt;fieldset&gt; + &lt;legend&gt;</code></td>
+        <td>booking.html</td>
+        <td>Групування полів форми</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="date"&gt;</code></td>
+        <td>booking.html</td>
+        <td>Нативний вибір дати</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="time"&gt;</code></td>
+        <td>booking.html</td>
+        <td>Нативний вибір часу</td>
+      </tr>
+      <tr>
+        <td><code>&lt;meter&gt;</code></td>
+        <td>menu.html (гострота)</td>
+        <td>Числовий індикатор рівня гостроти</td>
+      </tr>
+      <tr>
+        <td><code>aria-label</code></td>
+        <td>Всі 3 сторінки</td>
+        <td>Текстові мітки для скрін-рідерів</td>
+      </tr>
+      <tr>
+        <td><code>aria-labelledby</code></td>
+        <td>Всі 3 сторінки</td>
+        <td>Зв'язок елементів зі заголовками</td>
+      </tr>
+      <tr>
+        <td><code>aria-describedby</code></td>
+        <td>booking.html</td>
+        <td>Прив'язка підказок до полів форми</td>
+      </tr>
+      <tr>
+        <td><code>aria-current="page"</code></td>
+        <td>nav у всіх 3 сторінках</td>
+        <td>Позначення поточної сторінки</td>
+      </tr>
+      <tr>
+        <td><code>aria-required="true"</code></td>
+        <td>booking.html</td>
+        <td>Позначення обов'язкових полів</td>
+      </tr>
+      <tr>
+        <td><code>role="img"</code></td>
+        <td>menu.html (значки алергенів)</td>
+        <td>Ролі для спеціальних немовних значків</td>
+      </tr>
+      <tr>
+        <td><code>role="group"</code></td>
+        <td>menu.html, booking.html</td>
+        <td>Групування пов'язаних елементів</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. Валідація -->
+  <h2>6. Валідація HTML-коду</h2>
+  <p>
+    Валідація HTML-коду була виконана за допомогою онлайн-валідатора W3C Markup Validation Service
+    (<a href="https://validator.w3.org">validator.w3.org</a>).
+    Перевірялися всі три сторінки: <em>index.html</em>, <em>menu.html</em>, <em>booking.html</em>.
+  </p>
+  <p>
+    За результатами валідації помилок не виявлено. Можливі попередження (warnings) стосуються
+    порожніх атрибутів <code>action="#"</code> у формі та відсутніх зображень —
+    вони є навмисними заглушками для подальшого розвитку проєкту.
+  </p>
+
+  <!-- 7. Висновки -->
+  <h2>7. Висновки</h2>
+  <p>
+    У ході виконання лабораторної роботи було розроблено тристорінковий вебсайт
+    ресторану «Old Street» (м. Кам'янець-Подільський) з використанням стандарту HTML5.
+  </p>
+  <p>
+    <strong>Результати роботи:</strong>
+  </p>
+  <ol>
+    <li>
+      Створено семантично коректну структуру трьох сторінок
+      із застосуванням тегів <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+      <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+      <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.
+    </li>
+    <li>
+      На головній сторінці <em>index.html</em> реалізовано семантичний тег
+      <code>&lt;address&gt;</code> у <code>&lt;footer&gt;</code> для контактної інформації ресторану.
+    </li>
+    <li>
+      На сторінці <em>menu.html</em> здійснено структурування 6 категорій страв;
+      кожна страва позначена ARIA-мітками алергенів (<code>role="img"</code>, <code>aria-label</code>)
+      та семантичним елементом <code>&lt;meter&gt;</code> для рівня гостроти.
+    </li>
+    <li>
+      На сторінці <em>booking.html</em> реалізовано складну доступну форму бронювання столу
+      з 7 групами <code>&lt;fieldset&gt;</code>, нативними елементами вибору дати
+      (<code>&lt;input type="date"&gt;</code>) та часу (<code>&lt;input type="time"&gt;</code>),
+      чекбоксами та радіо-кнопками.
+    </li>
+    <li>
+      Усі сторінки пройшли валідацію W3C без критичних помилок.
+    </li>
+  </ol>
+  <p>
+    Опановано принципи семантичної верстки HTML5, роботи з ARIA-атрибутами
+    та побудови доступних форм. Отриманий результат є готовою основою для
+    подальшої стилізації (CSS) та впровадження адаптивної верстки у наступних
+    лабораторних роботах.
+  </p>
+
+  <!-- Підпис -->
+  <br>
+  <table style="width:100%; border:none; margin-top: 2em;">
+    <tr style="border:none;">
+      <td style="border:none; width:50%;">
+        Виконала: ________________________
+        <br><small>(підпис)</small>
+      </td>
+      <td style="border:none; text-align:right; width:50%;">
+        Дата захисту: ____________________
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
