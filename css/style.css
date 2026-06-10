@@ -335,12 +335,40 @@ tr:nth-child(even) td { background-color: #faf5ec; }
 .dish-info { flex: 1; }
 .dish-name { font-size: 1.05rem; margin-bottom: 0.2em; margin-top: 0; color: #1a1209; }
 .dish-desc { font-size: 0.9rem; color: #555; margin-bottom: 0.5em; }
+/* Права колонка: фото + ціна */
+.dish-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Фото страви — місце для зображення */
+.dish-img {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #ede8df;
+  display: block;
+}
+/* Якщо src порожній або файл не знайдено — показуємо заглушку */
+.dish-img[src=""], .dish-img:not([src]) {
+  border: 2px dashed #c8a96e;
+}
+
 .dish-price {
   font-size: 1.1rem;
   font-weight: bold;
   color: #8b4513;
   white-space: nowrap;
-  padding-top: 0.2em;
+}
+
+.dish-weight {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 0.2em;
 }
 
 /* Allergen badges */
@@ -372,6 +400,35 @@ tr:nth-child(even) td { background-color: #faf5ec; }
   font-size: 0.8rem;
   color: #4a8a4a;
   font-style: italic;
+}
+
+/* Горіхи/арахіс */
+.badge-n { background-color: #f5e6d0; color: #7a4000; border: 1px solid #d4966a; }
+
+/* Рекомендовано / Вагова страва */
+.badge-recommended {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: normal;
+  background: #e8f5e0;
+  color: #3a6e20;
+  border: 1px solid #8fc870;
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  vertical-align: middle;
+  margin-left: 0.4em;
+}
+.badge-weight {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: normal;
+  background: #fff0d8;
+  color: #8b4513;
+  border: 1px solid #c8a96e;
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  vertical-align: middle;
+  margin-left: 0.4em;
 }
 
 /* Spiciness */
