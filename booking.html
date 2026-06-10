@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Забронюйте стіл у ресторані Old Street — вкажіть дату, час та кількість гостей онлайн">
+  <title>Бронювання столу — Old Street</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ШАПКА САЙТУ ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Old Street — повернутися на головну сторінку">
+        <strong>Old Street</strong>
+        <span>Ресторан</span>
+      </a>
+      <nav class="main-nav" aria-label="Основна навігація сайту">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="booking.html" aria-current="page">Бронювання</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ОСНОВНИЙ КОНТЕНТ ===== -->
+  <main>
+    <div class="container">
+
+      <h1>Бронювання столу</h1>
+      <p>
+        Заповніть форму нижче і ми підтвердимо вашу резервацію протягом 1–2 годин.
+        Поля, позначені <abbr title="обов'язкове поле">*</abbr>, є обов'язковими.
+      </p>
+
+      <!-- Бічна панель з контактами -->
+      <aside class="booking-info" aria-label="Контактна інформація та умови бронювання">
+        <h2>Контакти та умови</h2>
+        <p>Для термінової резервації телефонуйте:</p>
+        <p>
+          <a href="tel:+380674001234" aria-label="Зателефонувати: плюс 38 067 400 12 34">
+            +38 (067) 400-12-34
+          </a>
+        </p>
+        <h3>Умови бронювання</h3>
+        <ul>
+          <li>Резервація дійсна 15 хвилин після вказаного часу</li>
+          <li>Прохання сповіщати про скасування за 2 години</li>
+          <li>Для компаній від 7 осіб — попередня оплата не потрібна</li>
+          <li>Ми зв'яжемося для підтвердження протягом 1–2 годин</li>
+        </ul>
+      </aside>
+
+      <!-- ===== ФОРМА БРОНЮВАННЯ ===== -->
+      <form
+        id="booking-form"
+        method="post"
+        action="#"
+        novalidate
+        aria-label="Форма бронювання столу в ресторані Old Street"
+      >
+
+        <!-- ── Fieldset 1: Контактні дані ── -->
+        <fieldset>
+          <legend>Ваші контактні дані</legend>
+
+          <div class="form-group">
+            <label for="name">
+              Ім'я та прізвище
+              <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+              autocomplete="name"
+              placeholder="Наприклад: Іванна Мельник"
+            >
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">
+                Номер телефону
+                <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                aria-required="true"
+                autocomplete="tel"
+                placeholder="+38 (0__) ___-__-__"
+                pattern="[\+]?[0-9\s\(\)\-]{10,15}"
+                aria-describedby="phone-hint"
+              >
+              <p id="phone-hint" class="form-hint">Формат: +38 (067) 123-45-67</p>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Електронна пошта</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="your@email.com"
+                aria-describedby="email-hint"
+              >
+              <p id="email-hint" class="form-hint">
+                Необов'язково. Надішлемо підтвердження на пошту.
+              </p>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 2: Деталі резервації ── -->
+        <fieldset>
+          <legend>Деталі резервації</legend>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">
+                Дата відвідування
+                <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+              </label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                required
+                aria-required="true"
+                min="2025-01-01"
+                aria-describedby="date-hint"
+              >
+              <p id="date-hint" class="form-hint">
+                Ресторан відкритий щоденно з <time>11:00</time> до <time>23:00</time>
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label for="time">
+                Час прибуття
+                <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+              </label>
+              <input
+                type="time"
+                id="time"
+                name="time"
+                required
+                aria-required="true"
+                min="11:00"
+                max="21:30"
+                step="1800"
+                aria-describedby="time-hint"
+              >
+              <p id="time-hint" class="form-hint">
+                Прийом броні з <time>11:00</time> до <time>21:30</time>
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">
+              Кількість гостей
+              <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+            </label>
+            <select
+              id="guests"
+              name="guests"
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Оберіть кількість гостей</option>
+              <option value="1">1 гість</option>
+              <option value="2">2 гості</option>
+              <option value="3">3 гості</option>
+              <option value="4">4 гості</option>
+              <option value="5">5 гостей</option>
+              <option value="6">6 гостей</option>
+              <option value="7-10">7–10 гостей</option>
+              <option value="10+">Більше 10 гостей (банкет)</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 3: Тип події ── -->
+        <fieldset>
+          <legend>Тип події <span class="form-optional">(необов'язково)</span></legend>
+
+          <div class="radio-group" role="radiogroup" aria-labelledby="event-legend">
+            <p id="event-legend" class="sr-only">Оберіть привід зустрічі</p>
+
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="regular">
+              Звичайна вечеря
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="birthday">
+              День народження
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="anniversary">
+              Річниця / Романтична вечеря
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="business">
+              Ділова зустріч
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="family">
+              Сімейне свято
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="event-type" value="other">
+              Інший привід
+            </label>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 4: Розташування ── -->
+        <fieldset>
+          <legend>Побажання щодо розташування <span class="form-optional">(необов'язково)</span></legend>
+
+          <div class="form-group">
+            <label for="seating">Оберіть зону:</label>
+            <select id="seating" name="seating">
+              <option value="any">Без різниці</option>
+              <option value="main-hall">Основний зал</option>
+              <option value="terrace">Літня тераса</option>
+              <option value="vip">VIP-кабінет (для компаній 6+)</option>
+              <option value="bar">Барна зона</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 5: Харчові обмеження ── -->
+        <fieldset>
+          <legend>Особливості харчування гостей <span class="form-optional">(необов'язково)</span></legend>
+
+          <p id="dietary-desc" class="form-hint">
+            Вкажіть, якщо у ваших гостей є алергени або особливі дієтичні потреби —
+            ми врахуємо це при підготовці.
+          </p>
+
+          <div class="checkbox-group"
+               role="group"
+               aria-labelledby="dietary-legend"
+               aria-describedby="dietary-desc">
+            <p id="dietary-legend" class="form-group-label">Оберіть усе, що відповідає:</p>
+
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="vegetarian">
+              Вегетаріанське меню
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="vegan">
+              Веганське меню
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="gluten-free">
+              Без глютену
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="lactose-free">
+              Без лактози
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="nut-allergy">
+              Алергія на горіхи
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="fish-allergy">
+              Алергія на рибу
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dietary" value="children-menu">
+              Потрібне дитяче меню
+            </label>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 6: Додаткові побажання ── -->
+        <fieldset>
+          <legend>Додаткові побажання</legend>
+
+          <div class="form-group">
+            <label for="message">Ваш коментар:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              maxlength="500"
+              placeholder="Особливі прохання: замовлення торта, прикраса столу, живa музика тощо..."
+              aria-describedby="message-hint"
+            ></textarea>
+            <p id="message-hint" class="form-hint">
+              Необов'язково. Максимум 500 символів.
+            </p>
+          </div>
+
+        </fieldset>
+
+        <!-- ── Fieldset 7: Підтвердження ── -->
+        <fieldset>
+          <legend>Підтвердження</legend>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                name="agree-terms"
+                id="agree-terms"
+                required
+                aria-required="true"
+                aria-describedby="terms-desc"
+              >
+              Я погоджуюсь з умовами бронювання
+              <abbr title="обов'язкове поле" aria-label="обов'язкове поле">*</abbr>
+            </label>
+            <p id="terms-desc" class="form-hint">
+              Бронювання підтверджується дзвінком адміністратора.
+              Прохання повідомити про скасування за 2 години до резервації.
+            </p>
+          </div>
+
+        </fieldset>
+
+        <!-- Кнопки форми -->
+        <div class="form-actions">
+          <button type="submit" class="btn">
+            Надіслати запит на бронювання
+          </button>
+          <button type="reset" class="btn btn-outline">
+            Скинути форму
+          </button>
+        </div>
+
+        <p class="form-note" role="note">
+          <strong>*</strong> — обов'язкові поля.
+          Ми зв'яжемось з вами протягом 1–2 годин.
+          Якщо потрібна термінова відповідь, телефонуйте:
+          <a href="tel:+380674001234">+38 (067) 400-12-34</a>
+        </p>
+
+      </form>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ===== ПІДВАЛ САЙТУ ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Old Street</strong>
+        <span>Ресторан у Кам'янці-Подільському</span>
+      </div>
+      <address class="footer-contacts" aria-label="Контактна інформація ресторану">
+        <p>
+          <a href="https://maps.app.goo.gl/Upp7kvdpMgaBoezo6"
+             target="_blank" rel="noopener noreferrer">
+            Старе місто, Кам'янець-Подільський, 32300
+          </a>
+        </p>
+        <p><a href="tel:+380674001234">+38 (067) 400-12-34</a></p>
+        <p><a href="mailto:info@old-street.com.ua">info@old-street.com.ua</a></p>
+      </address>
+      <nav class="footer-nav" aria-label="Навігація у підвалі сайту">
+        <h3>Розділи</h3>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="booking.html">Бронювання</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          <small>
+            &copy; <time datetime="2025">2025</time> Ресторан «Old Street»,
+            Кам'янець-Подільський. Всі права захищені.
+          </small>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
