@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- ===== ШАПКА САЙТУ ===== -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo" aria-label="Old Street — повернутися на головну сторінку">
@@ -26,14 +25,12 @@
     </div>
   </header>
 
-  <!-- ===== ОСНОВНИЙ КОНТЕНТ ===== -->
   <main>
     <div class="container">
 
       <h1>Меню</h1>
       <p>Страви приготовані з локальних продуктів Хмельницької та Вінницької областей.</p>
 
-      <!-- ── Легенда позначень ── -->
       <aside class="allergen-legend" aria-label="Легенда позначень алергенів та гостроти страв">
         <h2>Позначення в меню</h2>
         <dl class="legend-list">
@@ -70,494 +67,199 @@
         </dl>
       </aside>
 
-      <!-- ── Навігація по категоріях ── -->
-      <nav class="menu-nav" aria-label="Навігація по категоріях меню">
-        <ul>
-          <li><a href="#zakusky">Закуски</a></li>
-          <li><a href="#salaty">Салати</a></li>
-          <li><a href="#pershi-stravy">Перші страви</a></li>
-          <li><a href="#osnovni-stravy">Основні страви</a></li>
-          <li><a href="#desertu">Десерти</a></li>
-          <li><a href="#napoi">Напої</a></li>
-        </ul>
-      </nav>
+      <div id="menu">
+        
+        <nav class="menu-nav" aria-label="Навігація по категоріях меню">
+          <ul class="menu-list">
+            <li class="item"><a href="#zakusky">Закуски</a></li>
+            <li class="item"><a href="#salaty">Салати</a></li>
+            <li class="item"><a href="#pershi-stravy">Перші страви</a></li>
+            <li class="item"><a href="#osnovni-stravy">Основні страви</a></li>
+            <li class="item"><a href="#desertu">Десерти</a></li>
+            <li class="item"><a href="#napoi">Напої</a></li>
+          </ul>
+        </nav>
 
-      <!-- ════════════════════════════════
-           ЗАКУСКИ
-      ════════════════════════════════ -->
-      <section id="zakusky" aria-labelledby="zakusky-heading">
-        <h2 id="zakusky-heading">Закуски</h2>
+        <section id="zakusky" aria-labelledby="zakusky-heading">
+          <h2 id="zakusky-heading">Закуски</h2>
 
-        <article class="dish" aria-labelledby="dish-z1">
-          <div class="dish-info">
-            <h3 id="dish-z1" class="dish-name">Сало домашнє з чорним хлібом</h3>
-            <p class="dish-desc">
-              Солоне сало з часниковою намазкою, хрустким чорним хлібом
-              та маринованим огірочком
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Сало домашнє з чорним хлібом»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — містить пшеничний хліб">Г</span>
+          <article class="dish" aria-labelledby="dish-z1">
+            <div class="dish-info">
+              <h3 id="dish-z1" class="dish-name">Сало домашнє з чорним хлібом</h3>
+              <p class="dish-desc">
+                Солоне сало з часниковою намазкою, хрустким чорним хлібом
+                та маринованим огірочком
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Сало домашнє з чорним хлібом»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен — містить пшеничний хліб">Г</span>
+              </div>
             </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 85 гривень">85 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-z2">
-          <div class="dish-info">
-            <h3 id="dish-z2" class="dish-name">Гриби на сковорідці зі сметаною</h3>
-            <p class="dish-desc">
-              Смажені лісові гриби з цибулею та петрушкою у вершковому соусі,
-              подаються у чавунній сковорідці
+            <p class="dish-price">
+              <span aria-label="Ціна: 85 гривень">85 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Гриби на сковорідці»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — містить вершки та сметану">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 125 гривень">125 грн</span>
-          </p>
-        </article>
+          </article>
 
-        <article class="dish" aria-labelledby="dish-z3">
-          <div class="dish-info">
-            <h3 id="dish-z3" class="dish-name">Шпроти на грінках з лимоном</h3>
-            <p class="dish-desc">
-              Балтійські шпроти на підсмажених грінках із вершковим маслом,
-              прикрашені скибочкою лимона та свіжою зеленню
+          <article class="dish" aria-labelledby="dish-z2">
+            <div class="dish-info">
+              <h3 id="dish-z2" class="dish-name">Гриби на сковорідці зі сметаною</h3>
+              <p class="dish-desc">
+                Смажені лісові гриби з цибулею та петрушкою у вершковому соусі,
+                подаються у чавунній сковорідці
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Гриби на сковорідці»">
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — містить вершки та сметану">Л</span>
+              </div>
+            </div>
+            <p class="dish-price">
+              <span aria-label="Ціна: 125 гривень">125 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Шпроти на грінках»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — містить хліб">Г</span>
-              <span class="allergen-badge badge-f"
-                    role="img"
-                    aria-label="Алерген: риба — містить шпроти (атлантична кілька)">Р</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — містить вершкове масло">Л</span>
+          </article>
+
+          <article class="dish" aria-labelledby="dish-z3">
+            <div class="dish-info">
+              <h3 id="dish-z3" class="dish-name">Шпроти на грінках з лимоном</h3>
+              <p class="dish-desc">
+                Балтійські шпроти на підсмажених грінках із вершковим маслом,
+                прикрашені скибочкою лимона та свіжою зеленню
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Шпроти на грінках»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен — містить хліб">Г</span>
+                <span class="allergen-badge badge-f" role="img" aria-label="Алерген: риба — містить шпроти (атлантична кілька)">Р</span>
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — містить вершкове масло">Л</span>
+              </div>
             </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 95 гривень">95 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-      <!-- ════════════════════════════════
-           САЛАТИ
-      ════════════════════════════════ -->
-      <section id="salaty" aria-labelledby="salaty-heading">
-        <h2 id="salaty-heading">Салати</h2>
-
-        <article class="dish" aria-labelledby="dish-s1">
-          <div class="dish-info">
-            <h3 id="dish-s1" class="dish-name">Цезар з філе курки</h3>
-            <p class="dish-desc">
-              Салат романо, підсмажене куряче філе, хрусткі гренки,
-              стружка пармезану та класичний соус Цезар
+            <p class="dish-price">
+              <span aria-label="Ціна: 95 гривень">95 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Цезар з філе курки»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — гренки з пшеничного хліба">Г</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — містить сир пармезан">Л</span>
-              <span class="allergen-badge badge-y"
-                    role="img"
-                    aria-label="Алерген: яйця — у складі соусу Цезар">Я</span>
-              <span class="allergen-badge badge-f"
-                    role="img"
-                    aria-label="Алерген: риба — анчоуси у складі соусу Цезар">Р</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 160 гривень">160 грн</span>
-          </p>
-        </article>
+          </article>
+        </section>
 
-        <article class="dish" aria-labelledby="dish-s2">
-          <div class="dish-info">
-            <h3 id="dish-s2" class="dish-name">Грецький салат</h3>
-            <p class="dish-desc">
-              Свіжі помідори, огірки, солодкий перець, оливки Каламата,
-              сир Фета; заправлений оливковою олією з орегано
+        <section id="salaty" aria-labelledby="salaty-heading">
+          <h2 id="salaty-heading">Салати</h2>
+
+          <article class="dish" aria-labelledby="dish-s1">
+            <div class="dish-info">
+              <h3 id="dish-s1" class="dish-name">Цезар з філе курки</h3>
+              <p class="dish-desc">
+                Салат романо, підсмажене куряче філе, хрусткі гренки,
+                стружка пармезану та класичний соус Цезар
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Цезар з філе курки»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен — гренки з пшеничного хліба">Г</span>
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — містить сир пармезан">Л</span>
+                <span class="allergen-badge badge-y" role="img" aria-label="Алерген: яйця — у складі соусу Цезар">Я</span>
+                <span class="allergen-badge badge-f" role="img" aria-label="Алерген: риба — анчоуси у складі соусу Цезар">Р</span>
+              </div>
+            </div>
+            <p class="dish-price">
+              <span aria-label="Ціна: 160 гривень">160 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Грецький салат»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — містить сир Фета">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 135 гривень">135 грн</span>
-          </p>
-        </article>
+          </article>
 
-        <article class="dish" aria-labelledby="dish-s3">
-          <div class="dish-info">
-            <h3 id="dish-s3" class="dish-name">Теплий салат з телятиною та рукколою</h3>
-            <p class="dish-desc">
-              Смужки смаженої телятини на подушці з рукколи та черрі-томатів,
-              зі стружкою пармезану та бальзамічним кремом
+          <article class="dish" aria-labelledby="dish-s2">
+            <div class="dish-info">
+              <h3 id="dish-s2" class="dish-name">Грецький салат</h3>
+              <p class="dish-desc">
+                Свіжі помідори, огірки, солодкий перець, оливки Каламата,
+                сир Фета; заправлений оливковою олією з орегано
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Грецький салат»">
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — містить сир Фета">Л</span>
+              </div>
+            </div>
+            <p class="dish-price">
+              <span aria-label="Ціна: 135 гривень">135 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Теплий салат з телятиною»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — містить сир пармезан">Л</span>
+          </article>
+        </section>
+
+        <section id="pershi-stravy" aria-labelledby="pershi-stravy-heading">
+          <h2 id="pershi-stravy-heading">Перші страви</h2>
+
+          <article class="dish" aria-labelledby="dish-p1">
+            <div class="dish-info">
+              <h3 id="dish-p1" class="dish-name">Борщ «Старомістський» з пампушками</h3>
+              <p class="dish-desc">
+                Традиційний червоний борщ з квасолею, свинячою ребриною та буряком,
+                подається зі сметаною та часниковими пампушками. Фірмова страва ресторану
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Борщ Старомістський»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен — пампушки з пшеничного борошна">Г</span>
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — подається зі сметаною">Л</span>
+              </div>
             </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 175 гривень">175 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-      <!-- ════════════════════════════════
-           ПЕРШІ СТРАВИ
-      ════════════════════════════════ -->
-      <section id="pershi-stravy" aria-labelledby="pershi-stravy-heading">
-        <h2 id="pershi-stravy-heading">Перші страви</h2>
-
-        <article class="dish" aria-labelledby="dish-p1">
-          <div class="dish-info">
-            <h3 id="dish-p1" class="dish-name">Борщ «Старомістський» з пампушками</h3>
-            <p class="dish-desc">
-              Традиційний червоний борщ з квасолею, свинячою ребриною та буряком,
-              подається зі сметаною та часниковими пампушками. Фірмова страва ресторану
+            <p class="dish-price">
+              <span aria-label="Ціна: 125 гривень">125 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Борщ Старомістський»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — пампушки з пшеничного борошна">Г</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — подається зі сметаною">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 125 гривень">125 грн</span>
-          </p>
-        </article>
+          </article>
+        </section>
 
-        <article class="dish" aria-labelledby="dish-p2">
-          <div class="dish-info">
-            <h3 id="dish-p2" class="dish-name">Крем-суп із лісових грибів</h3>
-            <p class="dish-desc">
-              Оксамитовий крем-суп із білих грибів та шампіньйонів
-              з трюфельним маслом і хрусткими чіпсами з батону
+        <section id="osnovni-stravy" aria-labelledby="osnovni-stravy-heading">
+          <h2 id="osnovni-stravy-heading">Основні страви</h2>
+
+          <article class="dish" aria-labelledby="dish-o1">
+            <div class="dish-info">
+              <h3 id="dish-o1" class="dish-name">Котлета по-київськи з картоплею по-селянськи</h3>
+              <p class="dish-desc">
+                Куряче філе з начинкою з вершкового масла та зелені у хрусткій паніровці,
+                смажена у фритюрі. Подається з картоплею по-селянськи та мікс-салатом
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Котлета по-київськи»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен — панірувальні сухарі">Г</span>
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза — вершкове масло у начинці">Л</span>
+                <span class="allergen-badge badge-y" role="img" aria-label="Алерген: яйця — у паніровці">Я</span>
+              </div>
+            </div>
+            <p class="dish-price">
+              <span aria-label="Ціна: 195 гривень">195 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Крем-суп із лісових грибів»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — вершки та трюфельне масло">Л</span>
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — хлібні чіпси">Г</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 115 гривень">115 грн</span>
-          </p>
-        </article>
+          </article>
+        </section>
 
-        <article class="dish" aria-labelledby="dish-p3">
-          <div class="dish-info">
-            <h3 id="dish-p3" class="dish-name">Суп-гуляш по-угорськи</h3>
-            <p class="dish-desc">
-              Густий суп-гуляш із яловичиною, болгарським перцем та паприкою,
-              з картоплею та підкопченою ковбаскою. Традиційний угорський рецепт
+        <section id="desertu" aria-labelledby="desertu-heading">
+          <h2 id="desertu-heading">Десерти</h2>
+
+          <article class="dish" aria-labelledby="dish-d1">
+            <div class="dish-info">
+              <h3 id="dish-d1" class="dish-name">Медовик зі збитими вершками</h3>
+              <p class="dish-desc">
+                Класичний медовий торт із ніжним сметанним кремом,
+                прикрашений медовою крихтою та свіжими збитими вершками
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Медовик»">
+                <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен">Г</span>
+                <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза">Л</span>
+                <span class="allergen-badge badge-y" role="img" aria-label="Алерген: яйця">Я</span>
+              </div>
+            </div>
+            <p class="dish-price">
+              <span aria-label="Ціна: 95 гривень">95 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени та гострота страви «Суп-гуляш по-угорськи»">
-              <p class="spicy-label" id="spicy-label-p3">Гострота:</p>
-              <meter class="spicy-meter"
-                     min="0" max="3" value="1"
-                     aria-label="Гострота: 1 з 3 — легка гострота"
-                     aria-describedby="spicy-label-p3">
-                Легка гострота (1 з 3)
-              </meter>
-              <span class="spicy-text" aria-hidden="true">🌶 легка</span>
+          </article>
+        </section>
+
+        <section id="napoi" aria-labelledby="napoi-heading">
+          <h2 id="napoi-heading">Напої</h2>
+
+          <article class="dish" aria-labelledby="dish-n1">
+            <div class="dish-info">
+              <h3 id="dish-n1" class="dish-name">Домашній лимонад (0,5 л)</h3>
+              <p class="dish-desc">
+                Освіжаючий лимонад власного приготування: м'ята та лимон /
+                полуниця та базилік / огірок та лайм
+              </p>
+              <div class="dish-tags" role="group" aria-label="Алергени страви «Домашній лимонад»">
+                <span class="no-allergens" aria-label="Без основних алергенів">Без алергенів</span>
+              </div>
             </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 110 гривень">110 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-      <!-- ════════════════════════════════
-           ОСНОВНІ СТРАВИ
-      ════════════════════════════════ -->
-      <section id="osnovni-stravy" aria-labelledby="osnovni-stravy-heading">
-        <h2 id="osnovni-stravy-heading">Основні страви</h2>
-
-        <article class="dish" aria-labelledby="dish-o1">
-          <div class="dish-info">
-            <h3 id="dish-o1" class="dish-name">Котлета по-київськи з картоплею по-селянськи</h3>
-            <p class="dish-desc">
-              Куряче філе з начинкою з вершкового масла та зелені у хрусткій паніровці,
-              смажена у фритюрі. Подається з картоплею по-селянськи та мікс-салатом
+            <p class="dish-price">
+              <span aria-label="Ціна: 65 гривень">65 грн</span>
             </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Котлета по-київськи»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — панірувальні сухарі">Г</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — вершкове масло у начинці">Л</span>
-              <span class="allergen-badge badge-y"
-                    role="img"
-                    aria-label="Алерген: яйця — у паніровці">Я</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 195 гривень">195 грн</span>
-          </p>
-        </article>
+          </article>
+        </section>
 
-        <article class="dish" aria-labelledby="dish-o2">
-          <div class="dish-info">
-            <h3 id="dish-o2" class="dish-name">Свинячий стейк на кістці</h3>
-            <p class="dish-desc">
-              Стейк зі свинячої корейки на кістці, смажений на грилі,
-              з соусом Демі-гласс, запеченими сезонними овочами та розмарином
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Свинячий стейк»">
-              <span class="no-allergens"
-                    aria-label="Страва не містить основних 14 алергенів ЄС">Без алергенів</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 250 гривень">250 грн</span>
-          </p>
-        </article>
+      </div></div></main>
 
-        <article class="dish" aria-labelledby="dish-o3">
-          <div class="dish-info">
-            <h3 id="dish-o3" class="dish-name">Форель запечена з лимоном та каперсами</h3>
-            <p class="dish-desc">
-              Ціла річкова форель, запечена у духовці з лимоном, каперсами та свіжою зеленню,
-              подається з рисом та свіжими овочами
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Форель запечена»">
-              <span class="allergen-badge badge-f"
-                    role="img"
-                    aria-label="Алерген: риба — форель (річкова)">Р</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 270 гривень">270 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-o4">
-          <div class="dish-info">
-            <h3 id="dish-o4" class="dish-name">Вареники з картоплею та шкварками</h3>
-            <p class="dish-desc">
-              Ліплені вручну вареники з пюре з картоплі та смаженою цибулею,
-              подаються зі шкварками та домашньою сметаною
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Вареники з картоплею»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — пшеничне тісто">Г</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — сметана">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 120 гривень">120 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-o5">
-          <div class="dish-info">
-            <h3 id="dish-o5" class="dish-name">Чахохбілі з фермерської курки</h3>
-            <p class="dish-desc">
-              Грузинське рагу з курки у томатно-цибулевому соусі
-              з хмелі-сунелі, кінзою та гострим перцем. Подається з лавашем
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени та гострота страви «Чахохбілі»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — лаваш із пшеничного борошна">Г</span>
-              <p class="spicy-label" id="spicy-label-o5">Гострота:</p>
-              <meter class="spicy-meter"
-                     min="0" max="3" value="2"
-                     aria-label="Гострота: 2 з 3 — помірна гострота"
-                     aria-describedby="spicy-label-o5">
-                Помірна гострота (2 з 3)
-              </meter>
-              <span class="spicy-text" aria-hidden="true">🌶🌶 помірна</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 175 гривень">175 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-      <!-- ════════════════════════════════
-           ДЕСЕРТИ
-      ════════════════════════════════ -->
-      <section id="desertu" aria-labelledby="desertu-heading">
-        <h2 id="desertu-heading">Десерти</h2>
-
-        <article class="dish" aria-labelledby="dish-d1">
-          <div class="dish-info">
-            <h3 id="dish-d1" class="dish-name">Медовик зі збитими вершками</h3>
-            <p class="dish-desc">
-              Класичний медовий торт із ніжним сметанним кремом,
-              прикрашений медовою крихтою та свіжими збитими вершками
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Медовик»">
-              <span class="allergen-badge badge-g" role="img" aria-label="Алерген: глютен">Г</span>
-              <span class="allergen-badge badge-l" role="img" aria-label="Алерген: лактоза">Л</span>
-              <span class="allergen-badge badge-y" role="img" aria-label="Алерген: яйця">Я</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 95 гривень">95 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-d2">
-          <div class="dish-info">
-            <h3 id="dish-d2" class="dish-name">Чізкейк «Нью-Йорк»</h3>
-            <p class="dish-desc">
-              Класичний запечений чізкейк на пісочному коржі
-              зі свіжими ягодами та домашнім ягідним соусом
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Чізкейк Нью-Йорк»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — пісочний корж">Г</span>
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — вершковий сир">Л</span>
-              <span class="allergen-badge badge-y"
-                    role="img"
-                    aria-label="Алерген: яйця">Я</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 115 гривень">115 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-d3">
-          <div class="dish-info">
-            <h3 id="dish-d3" class="dish-name">Панна-котта з ягідним соусом</h3>
-            <p class="dish-desc">
-              Ніжна італійська панна-котта з ванільним ароматом,
-              поданий з домашнім соусом із сезонних ягід
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Панна-котта»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — вершки">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 105 гривень">105 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-      <!-- ════════════════════════════════
-           НАПОЇ
-      ════════════════════════════════ -->
-      <section id="napoi" aria-labelledby="napoi-heading">
-        <h2 id="napoi-heading">Напої</h2>
-
-        <article class="dish" aria-labelledby="dish-n1">
-          <div class="dish-info">
-            <h3 id="dish-n1" class="dish-name">Домашній лимонад (0,5 л)</h3>
-            <p class="dish-desc">
-              Освіжаючий лимонад власного приготування: м'ята та лимон /
-              полуниця та базилік / огірок та лайм
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Домашній лимонад»">
-              <span class="no-allergens"
-                    aria-label="Без основних алергенів">Без алергенів</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 65 гривень">65 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-n2">
-          <div class="dish-info">
-            <h3 id="dish-n2" class="dish-name">Свіжовичавлений сік (0,3 л)</h3>
-            <p class="dish-desc">
-              Апельсиновий, гранатовий або яблучний сік,
-              вичавлений у момент замовлення
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Свіжовичавлений сік»">
-              <span class="no-allergens"
-                    aria-label="Без основних алергенів">Без алергенів</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 75 гривень">75 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-n3">
-          <div class="dish-info">
-            <h3 id="dish-n3" class="dish-name">Капучіно (250 мл)</h3>
-            <p class="dish-desc">
-              Класичний капучіно на основі еспресо з молочною піною.
-              Доступна рослинна альтернатива — вівсяне молоко
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Капучіно»">
-              <span class="allergen-badge badge-l"
-                    role="img"
-                    aria-label="Алерген: лактоза — молоко. Доступна рослинна альтернатива.">Л</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 65 гривень">65 грн</span>
-          </p>
-        </article>
-
-        <article class="dish" aria-labelledby="dish-n4">
-          <div class="dish-info">
-            <h3 id="dish-n4" class="dish-name">Крафтове пиво (0,5 л)</h3>
-            <p class="dish-desc">
-              Крафтове пиво від подільської пивоварні:
-              світле (4,5%), темне (5,5%) або пшеничне (4,8%)
-            </p>
-            <div class="dish-tags" role="group" aria-label="Алергени страви «Крафтове пиво»">
-              <span class="allergen-badge badge-g"
-                    role="img"
-                    aria-label="Алерген: глютен — містить зерно ячменю або пшениці">Г</span>
-            </div>
-          </div>
-          <p class="dish-price">
-            <span aria-label="Ціна: 85 гривень">85 грн</span>
-          </p>
-        </article>
-
-      </section>
-
-    </div><!-- /.container -->
-  </main>
-
-  <!-- ===== ПІДВАЛ САЙТУ ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -566,8 +268,7 @@
       </div>
       <address class="footer-contacts" aria-label="Контактна інформація ресторану">
         <p>
-          <a href="https://maps.app.goo.gl/Upp7kvdpMgaBoezo6"
-             target="_blank" rel="noopener noreferrer">
+          <a href="https://maps.app.goo.gl/Upp7kvdpMgaBoezo6" target="_blank" rel="noopener noreferrer">
             Старе місто, Кам'янець-Подільський, 32300
           </a>
         </p>
@@ -585,12 +286,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>
-          <small>
-            &copy; <time datetime="2025">2025</time> Ресторан «Old Street»,
-            Кам'янець-Подільський. Всі права захищені.
-          </small>
-        </p>
+        <p><small>© <time datetime="2025">2025</time> Ресторан «Old Street». Всі права захищені.</small></p>
       </div>
     </div>
   </footer>
