@@ -6,15 +6,15 @@
   <meta name="description" content="Меню ресторану Old Street — закуски, салати, перші та основні страви, десерти та напої з автентичних подільських рецептів">
   <title>Меню — Old Street</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo" aria-label="Old Street — повернутися на головну сторінку">
-        <strong>Old Street</strong>
-        <span>Ресторан</span>
-      </a>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Old Street Ресторан" class="logo-img">
+      </div>
       <nav class="main-nav" aria-label="Основна навігація сайту">
         <ul>
           <li><a href="index.html">Головна</a></li>
@@ -34,9 +34,12 @@
 
         <div class="menu-filters" id="filters-parent">
           <button class="filter-btn active" data-category="all">Всі страви</button>
-          <button class="filter-btn" data-category="breakfast">Сніданки</button>
           <button class="filter-btn" data-category="soup">Перші страви</button>
+          <button class="filter-btn" data-category="breakfast">Сніданки</button>
           <button class="filter-btn" data-category="main">Гарячі страви</button>
+          <button class="filter-btn" data-category="salad">Салати</button>
+          <button class="filter-btn" data-category="pasta">Паста</button>
+          <button class="filter-btn" data-category="appetizer">Закуски</button>
           <button class="filter-btn" data-category="dessert">Солодощі</button>
         </div>
 
@@ -87,23 +90,21 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <strong>Old Street</strong>
+        <img src="images/logo.jpg" alt="Old Street Ресторан" class="footer-logo-img">
+        <strong class="footer-name">Old Street</strong>
         <span>Ресторан у Кам'янці-Подільському</span>
       </div>
       <address class="footer-contacts" aria-label="Контактна інформація ресторану">
-        <p>
-          <a href="https://maps.app.goo.gl/Upp7kvdpMgaBoezo6" target="_blank" rel="noopener noreferrer">
-            Старе місто, Кам'янець-Подільський, 32300
-          </a>
-        </p>
-        <p><a href="tel:+380674001234">+38 (067) 400-12-34</a></p>
-        <p><a href="mailto:info@old-street.com.ua">info@old-street.com.ua</a></p>
+        <p><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><a href="https://maps.app.goo.gl/Upp7kvdpMgaBoezo6" target="_blank" rel="noopener noreferrer">Старе місто, Кам'янець-Подільський, 32300</a></p>
+        <p><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 .01 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+380674001234">+38 (067) 400-12-34</a></p>
+        <p><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><a href="https://old-street.choiceqr.com" target="_blank" rel="noopener noreferrer">old-street.choiceqr.com</a></p>
       </address>
       <nav class="footer-nav" aria-label="Навігація у підвалі сайту">
-        <h3>Розділи</h3>
+        <h3>Навігація</h3>
         <ul>
           <li><a href="index.html">Головна</a></li>
           <li><a href="menu.html">Меню</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
           <li><a href="booking.html">Бронювання</a></li>
         </ul>
       </nav>
