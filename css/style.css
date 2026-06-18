@@ -110,21 +110,22 @@ main {
   border-bottom: 2px solid #704214; /* Пряме фірмове значення */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .menu-filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .menu-filters::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 12px;
+    gap: 6px;
   }
   .filter-btn {
-    flex-shrink: 0;
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 4px 8px;
+    font-size: 0.62rem;
   }
+}
+
+@media (max-width: 600px) {
   .main-nav ul {
     gap: 10px;
   }
@@ -427,6 +428,20 @@ li.item a {
     width: 100%;
     align-items: center;
   }
+
+  /* Sticky-панель меню на мобільному */
+  .menu-filters {
+    margin-bottom: 0;
+  }
+  .allergen-legend {
+    margin-bottom: 8px;
+  }
+  .legend-list {
+    gap: 6px 14px;
+  }
+  .legend-item dd {
+    font-size: 0.75rem;
+  }
   .footer-bottom {
     font-size: 0.75rem;
   }
@@ -693,6 +708,13 @@ li.item a {
   border-bottom: 1px solid #e4ded5;
 }
 
+@media (max-width: 768px) {
+  .menu-sticky-header {
+    position: static;
+    border-bottom: none;
+  }
+}
+
 /* Стилізація кнопок фільтрації */
 .menu-filters {
   display: flex;
@@ -706,14 +728,14 @@ li.item a {
 .filter-btn {
   background-color: transparent;
   border: 1.5px solid #c9bfb0;
-  padding: 8px 20px;
+  padding: 6px 14px;
   border-radius: 4px;
   cursor: pointer;
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: all 0.2s ease;
 }
@@ -1022,4 +1044,39 @@ li.item a {
   font-size: 1.2rem;
   color: #e74c3c;
   padding: 30px;
+}
+
+/* ==========================================================================
+   МОБІЛЬНА АДАПТАЦІЯ КАРТОК МЕНЮ
+   ========================================================================== */
+@media (max-width: 600px) {
+  .menu-item {
+    grid-template-columns: 1fr 110px;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  .menu-item-photo,
+  .menu-item img,
+  .menu-item-img {
+    width: 110px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  .menu-item-img-placeholder {
+    width: 110px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  .menu-item-desc {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    display: block;
+  }
+
+  .menu-item-title {
+    font-size: 1rem;
+  }
 }
