@@ -27,6 +27,13 @@ body {
   margin: 0;
   padding-top: var(--header-height);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
@@ -532,23 +539,19 @@ li.item a {
 
 .section-title h1 {
   font-size: 2rem;
-  color: #2c3e50;
+  color: var(--text-dark);
   margin-bottom: 10px;
 }
 
-/* 1 & 2. Реалізація динамічної сітки CSS Grid та відступів min() */
+/* Masonry-колонки: фото показуються у своєму природньому форматі */
 .gallery-grid {
-  display: grid;
-  /* Автоматичне заповнення простору колонками (мінімум 200px, максимум 1fr) */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* Динамічні внутрішні відступи: зменшуються на мобільних (5vw), але не більше 40px */
-  gap: min(5vw, 40px);
+  columns: 3 260px;
+  column-gap: min(3vw, 20px);
 }
 
-/* Оголошення контейнера для роботи Container Queries */
 .gallery-item-container {
-  container-type: inline-size;
-  container-name: gallery-card-container;
+  break-inside: avoid;
+  margin-bottom: min(3vw, 20px);
   width: 100%;
 }
 
@@ -560,75 +563,45 @@ li.item a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card-image-wrapper {
   width: 100%;
-  position: relative;
 }
 
+/* Природній розмір: вертикальні — вищі, горизонтальні — ширші */
 .card-image-wrapper img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .card-content {
   display: none;
-  padding: 0;
 }
 
 .card-content h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
+  margin: 0 0 6px 0;
+  font-size: 1rem;
   color: #333;
 }
 
-/* 3. Додатковий опис за замовчуванням прихований */
 .card-desc {
-  display: none; 
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
   margin: 0;
 }
 
-/* 3. Застосування Container Queries (Контейнерних запитів) */
-/* Якщо ширина Окремого Контейнера Картки стає >= 350px */
-@container gallery-card-container (min-width: 350px) {
-  /* Показуємо прихований текстовий опис */
-  .card-desc {
-    display: block; 
-  }
-  
-  /* Додатковий бонус для демонстрації гнучкості: 
-     якщо місця стає дуже багато, картка перетворюється на горизонтальну (Flexbox) */
-  .gallery-card {
-    flex-direction: row;
-  }
-  
-  .card-image-wrapper {
-    flex: 1;
-  }
-  
-  .card-image-wrapper img {
-    height: 100%; /* Фото розтягується на всю висоту горизонтальної картки */
-    min-height: 200px;
-  }
-  
-  .card-content {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (max-width: 560px) {
+  .gallery-grid {
+    columns: 1;
   }
 }
 /* ==========================================================================
@@ -636,6 +609,17 @@ li.item a {
    ========================================================================== */
 .menu-section h1 {
   text-align: center;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+.menu-sticky-header {
+  position: sticky;
+  top: var(--header-height);
+  background-color: var(--bg-light);
+  z-index: 50;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e4ded5;
 }
 
 /* Стилізація кнопок фільтрації */
@@ -643,10 +627,9 @@ li.item a {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   flex-wrap: wrap;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #e4ded5;
+  padding: 12px 20px 12px;
 }
 
 .filter-btn {
@@ -697,7 +680,7 @@ li.item a {
 .menu-item {
   display: grid;
   grid-template-columns: 1fr 220px;
-  gap: 40px;
+  gap: 10px;
   align-items: center;
   padding: 32px 0;
   width: 100%;
@@ -758,6 +741,140 @@ li.item a {
   padding: 2px 8px;
   border-radius: 20px;
   font-weight: 600;
+}
+
+.menu-spicy {
+  font-size: 0.85rem;
+  letter-spacing: -2px;
+}
+
+/* Легенда алергенів — горизонтальний рядок під фільтрами */
+.allergen-legend {
+  margin-bottom: 32px;
+}
+
+.legend-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-item dt {
+  flex-shrink: 0;
+}
+
+.legend-item dd {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #665c52;
+}
+
+.spicy-icon {
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   ФОРМА БРОНЮВАННЯ
+   ========================================================================== */
+#booking-form {
+  max-width: 580px;
+  margin: 40px auto;
+}
+
+#booking-form h1 {
+  font-size: 2rem;
+  color: var(--main-dark);
+  margin-bottom: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--main-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--white);
+  border: 1.5px solid #c9bfb0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #704214;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.form-note {
+  margin-top: 24px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: #f0e9e0;
+  border-left: 3px solid #704214;
+  padding: 14px 18px;
+  border-radius: 4px;
+}
+
+.form-note a {
+  color: #704214;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.form-note a:hover {
+  text-decoration: underline;
+}
+
+#booking-success div:first-child {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  background: #704214;
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0 auto 16px;
 }
 
 /* Фото — фіксований розмір, не залежить від тексту */

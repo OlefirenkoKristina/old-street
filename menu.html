@@ -30,7 +30,8 @@
     <div class="container">
 
       <section class="menu-section">
-        <h1>Наше Меню</h1>
+        <div class="menu-sticky-header">
+          <h1>Наше Меню</h1>
 
         <div class="menu-filters" id="filters-parent">
           <button class="filter-btn active" data-category="all">Всі страви</button>
@@ -43,44 +44,34 @@
           <button class="filter-btn" data-category="dessert">Солодощі</button>
         </div>
 
+        <aside class="allergen-legend" aria-label="Легенда позначень алергенів та гостроти страв">
+          <dl class="legend-list">
+            <div class="legend-item">
+              <dt><span class="allergen-badge badge-g" aria-hidden="true">Г</span></dt>
+              <dd>Глютен</dd>
+            </div>
+            <div class="legend-item">
+              <dt><span class="allergen-badge badge-l" aria-hidden="true">Л</span></dt>
+              <dd>Лактоза</dd>
+            </div>
+            <div class="legend-item">
+              <dt><span class="allergen-badge badge-y" aria-hidden="true">Я</span></dt>
+              <dd>Яйця</dd>
+            </div>
+            <div class="legend-item">
+              <dt><span class="allergen-badge badge-f" aria-hidden="true">Р</span></dt>
+              <dd>Риба та морепродукти</dd>
+            </div>
+            <div class="legend-item">
+              <dt><span class="spicy-icon" aria-hidden="true">🌶</span></dt>
+              <dd>Гострота</dd>
+            </div>
+          </dl>
+        </aside>
+        </div>
+
         <div id="menu-container" class="menu-list"></div>
       </section>
-
-      <aside class="allergen-legend" aria-label="Легенда позначень алергенів та гостроти страв">
-        <h2>Позначення в меню</h2>
-        <dl class="legend-list">
-          <div class="legend-item">
-            <dt>
-              <span class="allergen-badge badge-g" aria-hidden="true">Г</span>
-            </dt>
-            <dd>Глютен — пшениця, жито, ячмінь, овес</dd>
-          </div>
-          <div class="legend-item">
-            <dt>
-              <span class="allergen-badge badge-l" aria-hidden="true">Л</span>
-            </dt>
-            <dd>Лактоза — молоко, вершки, масло, сир</dd>
-          </div>
-          <div class="legend-item">
-            <dt>
-              <span class="allergen-badge badge-y" aria-hidden="true">Я</span>
-            </dt>
-            <dd>Яйця</dd>
-          </div>
-          <div class="legend-item">
-            <dt>
-              <span class="allergen-badge badge-f" aria-hidden="true">Р</span>
-            </dt>
-            <dd>Риба та морепродукти</dd>
-          </div>
-          <div class="legend-item">
-            <dt>
-              <span class="spicy-icon" aria-hidden="true">🌶</span>
-            </dt>
-            <dd>Гострота страви: 1 — легка, 2 — помірна, 3 — висока</dd>
-          </div>
-        </dl>
-      </aside>
 
     </div>
   </main>

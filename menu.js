@@ -34,7 +34,14 @@ const fetchMenuFromServer = async () => {
   }
 };
 
-const renderDish = ({ title, price, weight, description, image, recommended }) => {
+const allergenMap = {
+  g: { cls: "badge-g", label: "Г" },
+  l: { cls: "badge-l", label: "Л" },
+  y: { cls: "badge-y", label: "Я" },
+  f: { cls: "badge-f", label: "Р" },
+};
+
+const renderDish = ({ title, price, weight, description, image, recommended, allergens, spicy }) => {
   const imgBlock = image
     ? `<img src="${image}" alt="${title}" class="menu-item-img">`
     : `<div class="menu-item-img-placeholder"></div>`;
@@ -43,13 +50,23 @@ const renderDish = ({ title, price, weight, description, image, recommended }) =
   const wt  = weight     ? `<span class="menu-weight">⚖ ${weight}</span>` : "";
   const desc = description ? `<p class="menu-item-desc">${description}</p>` : "";
 
+  const allergenBadges = (allergens || [])
+    .map(a => allergenMap[a])
+    .filter(Boolean)
+    .map(({ cls, label }) => `<span class="allergen-badge ${cls}" title="${label}">${label}</span>`)
+    .join("");
+
+  const spicyBadge = spicy
+    ? `<span class="menu-spicy">${"🌶".repeat(spicy)}</span>`
+    : "";
+
   return `
     <article class="menu-item">
       <div class="menu-item-info">
         <h3 class="menu-item-title">${title}</h3>
         <p class="menu-item-price">${price} ₴</p>
         ${desc}
-        <div class="menu-item-meta">${wt}${rec}</div>
+        <div class="menu-item-meta">${wt}${allergenBadges}${spicyBadge}${rec}</div>
       </div>
       <div class="menu-item-photo">${imgBlock}</div>
     </article>
