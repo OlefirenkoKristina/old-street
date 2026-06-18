@@ -110,6 +110,35 @@ main {
   border-bottom: 2px solid #704214; /* Пряме фірмове значення */
 }
 
+@media (max-width: 600px) {
+  .menu-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .menu-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+  }
+  .main-nav ul {
+    gap: 10px;
+  }
+  .main-nav a {
+    font-size: 0.75rem;
+  }
+  .logo-img {
+    height: 34px;
+  }
+  .site-header {
+    padding: 12px 0;
+  }
+}
+
 /* ==========================================================================
    ЗАВДАННЯ 2: ІЄРАРХІЯ СЕЛЕКТОРІВ ТА ВАГА (СПЕЦИФІЧНІСТЬ)
    ========================================================================== */
@@ -365,6 +394,44 @@ li.item a {
   }
 }
 
+@media (max-width: 600px) {
+  .footer-name {
+    font-size: 0.95rem;
+  }
+  .footer-brand span {
+    font-size: 0.75rem;
+  }
+  .footer-logo-img {
+    height: 42px;
+  }
+  .footer-contacts p {
+    font-size: 0.82rem;
+    gap: 10px;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+  .contact-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .footer-nav {
+    display: none;
+  }
+  .footer-inner {
+    justify-content: center;
+  }
+  .footer-brand {
+    width: 100%;
+    align-items: center;
+  }
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
 /* ==========================================================================
    СЕКЦІЯ ГРАФІКУ ТА КАРТИ
    ========================================================================== */
@@ -377,6 +444,10 @@ li.item a {
   grid-template-columns: 1fr 1.4fr;
   gap: 60px;
   align-items: start;
+}
+
+.info-grid > div:first-child {
+  padding-left: 60px;
 }
 
 .location-heading {
